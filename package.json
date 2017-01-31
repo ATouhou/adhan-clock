@@ -1,0 +1,35 @@
+{
+  "name": "adhan-clock",
+  "version": "1.0.0",
+  "description": "An open-source adhan clock",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmmoussa/adhan-clock.git"
+  },
+  "keywords": [
+    "Islam",
+    "Muslim",
+    "Adhan",
+    "Salat",
+    "Prayer",
+    "Clock"
+  ],
+  "author": "Mohamed Moussa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmmoussa/adhan-clock/issues"
+  },
+  "homepage": "https://github.com/mmmoussa/adhan-clock#readme",
+  "dependencies": {
+    "adhan": "^2.0.0",
+    "fs": "0.0.1-security",
+    "lame": "^1.2.4",
+    "path": "^0.12.7",
+    "request": "^2.79.0",
+    "speaker": "^0.3.0"
+  }
+}
