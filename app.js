@@ -9,6 +9,7 @@ var Speaker = require('speaker');
 const CALCULATION_METHOD = adhan.CalculationMethod.NorthAmerica();
 const MADHAB = adhan.Madhab.Shafi;
 const HIGH_LATITUDE_RULE = adhan.HighLatitudeRule.MiddleOfTheNight;
+const LOCATION_FILE = path.join(__dirname, 'location.txt');
 
 // Return whether or not two date objects occur at the same hour and minute
 function sameTime(d1, d2) {
@@ -57,13 +58,13 @@ function getLocation(callback) {
 			// Save the current coordinates to a file to be used in case the api
 			// goes down or the device running this script loses its internet
 			// connection
-			fs.writeFile('location.txt', locationStr, (err) => {
+			fs.writeFile(LOCATION_FILE, locationStr, (err) => {
 				if (err) throw err;
 			});
 			callback(parsed.lat, parsed.lon);
 		} else {
 			// Use saved coordinates as current location
-			fs.readFile('location.txt', 'utf8', (err, data) => {
+			fs.readFile(LOCATION_FILE, 'utf8', (err, data) => {
 				if (err) {
 					// Absolute fallback location is the Kaaba
 					callback(21.4225289, 39.8239929);
